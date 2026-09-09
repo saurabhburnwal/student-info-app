@@ -2,18 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Information System</title>
+  <!-- Bespoke Typography: Space Grotesk + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Student Information System</h1>
+  <!-- Tech Grid Background -->
+  <div class="grid-backdrop"></div>
+  <div class="vignette"></div>
 
-  <p>Name: <input type="text" id="nameInput"></p>
-  <p>Register Number: <input type="text" id="regInput"></p>
-  <p>Programme: <input type="text" id="programmeInput"></p>
+  <div class="wrapper">
+    <!-- Main Content Area: Split Console & Identity Card -->
+    <main class="main-layout">
+      
+      <!-- Left Column: Input Deck / Console -->
+      <section class="console-panel">
+        <div class="panel-corners">
+          <span class="corner top-l">+</span>
+          <span class="corner top-r">+</span>
+          <span class="corner bot-l">+</span>
+          <span class="corner bot-r">+</span>
+        </div>
 
-  <button id="showDetailsBtn">Show Details</button>
+        <div class="panel-header">
+          <div class="terminal-tag">STUDENT PORTAL</div>
+          <h1>Student Information System</h1>
+          <p class="panel-desc">Submit student registration credentials to verify and render the digital campus identification pass.</p>
+        </div>
+
+        <form class="credential-form" onsubmit="return false;">
+          <div class="field-item">
+            <div class="field-label-bar">
+              <label for="nameInput">STUDENT FULL NAME</label>
+              <span class="field-code">FIELD // 01</span>
+            </div>
+            <div class="field-box">
+              <input type="text" id="nameInput" placeholder="e.g. Cynthia Vance" autocomplete="off" />
+              <span class="input-focus-line"></span>
+            </div>
+          </div>
+
+          <div class="field-item">
+            <div class="field-label-bar">
+              <label for="regInput">REGISTER NUMBER</label>
+              <span class="field-code">FIELD // 02</span>
+            </div>
+            <div class="field-box">
+              <input type="text" id="regInput" placeholder="e.g. 101" autocomplete="off" />
+              <span class="input-focus-line"></span>
+            </div>
+          </div>
+
+          <div class="field-item">
+            <div class="field-label-bar">
+              <label for="programmeInput">ACADEMIC PROGRAMME</label>
+              <span class="field-code">FIELD // 03</span>
+            </div>
+            <div class="field-box">
+              <input type="text" id="programmeInput" placeholder="e.g. MCA" autocomplete="off" />
+              <span class="input-focus-line"></span>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button id="showDetailsBtn" type="button" class="action-btn">
+              <span class="btn-shine"></span>
+              <span class="btn-content">
+                <span class="btn-text">Show Details</span>
+                <span class="btn-arrow">→</span>
+              </span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Right Column: Physical-Digital Student Pass Card -->
+      <section class="pass-preview-panel">
+        <div class="pass-header-info">
+          <span class="pass-badge">LIVE PASS PREVIEW</span>
+          <span class="pass-id">STUDENT ID CARD</span>
+        </div>
+
+        <!-- Physical ID Pass Container with Holographic Sheen -->
+        <div class="id-pass" id="studentDetailsCard">
+          <!-- Holographic ribbon running across card -->
+          <div class="holo-ribbon"></div>
+
+          <!-- Pass Top Bar -->
+          <div class="pass-top">
+            <div class="pass-institution">
+              <div class="ins-logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="ins-name">CHRIST (DEEMED TO BE UNIVERSITY)</div>
+                <div class="ins-sub">BANGALORE, INDIA • DEPARTMENT OF COMPUTER SCIENCE</div>
+              </div>
+            </div>
+            
+            <div class="pass-nfc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Pass Mid Section: Smartchip & Student Portrait Silhouette -->
+          <div class="pass-chip-row">
+            <!-- Realistic metallic EMV Smart Chip -->
+            <div class="smart-chip">
+              <div class="chip-line horizontal"></div>
+              <div class="chip-line vertical"></div>
+              <div class="chip-core"></div>
+            </div>
+            <div class="security-stamp">VERIFIED PASS</div>
+          </div>
+
+          <!-- Student Information Render Deck -->
+          <div class="student-info-deck">
+            <div class="info-group">
+              <span class="info-tag">STUDENT NAME</span>
+              <div class="info-val info-highlight" id="displayName">Cynthia</div>
+            </div>
+
+            <div class="info-dual">
+              <div class="info-group">
+                <span class="info-tag">REGISTER NUMBER</span>
+                <div class="info-val mono-code" id="displayReg">101</div>
+              </div>
+
+              <div class="info-group">
+                <span class="info-tag">PROGRAMME</span>
+                <div class="info-val mono-code" id="displayProgramme">MCA</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pass Bottom: Barcode Strip & Magnetic Footer -->
+          <div class="pass-footer">
+            <div class="barcode">
+              <span class="bar b-thick"></span>
+              <span class="bar b-thin"></span>
+              <span class="bar b-med"></span>
+              <span class="bar b-thin"></span>
+              <span class="bar b-thick"></span>
+              <span class="bar b-thin"></span>
+              <span class="bar b-thick"></span>
+              <span class="bar b-med"></span>
+              <span class="bar b-thin"></span>
+              <span class="bar b-thick"></span>
+              <span class="bar b-med"></span>
+              <span class="bar b-thin"></span>
+              <span class="bar b-thick"></span>
+              <span class="bar b-thin"></span>
+              <span class="bar b-med"></span>
+              <span class="bar b-thick"></span>
+            </div>
+            <div class="serial-no">ID//101-MCA-2026-AUTH</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
