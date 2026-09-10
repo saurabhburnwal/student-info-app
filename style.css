@@ -475,6 +475,13 @@ input[type="text"]:focus {
   color: var(--accent);
 }
 
+.mono-code-sm {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  word-break: break-all;
+}
+
 .info-dual {
   display: grid;
   grid-template-columns: 1fr 1fr;
