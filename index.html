@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
   <!-- Bespoke Typography: Space Grotesk + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- Tech Grid Background -->
@@ -19,7 +23,7 @@
   <div class="wrapper">
     <!-- Main Content Area: Split Console & Identity Card -->
     <main class="main-layout">
-      
+
       <!-- Left Column: Input Deck / Console -->
       <section class="console-panel">
         <div class="panel-corners">
@@ -31,8 +35,11 @@
 
         <div class="panel-header">
           <div class="terminal-tag">STUDENT PORTAL</div>
-          <h1>Student Information System</h1>
-          <p class="panel-desc">Submit student registration credentials to verify and render the digital campus identification pass.</p>
+          <!-- <h1>Student Information System</h1> -->
+          <h1>Student Management System</h1>
+
+          <p class="panel-desc">Submit student registration credentials to verify and render the digital campus
+            identification pass.</p>
         </div>
 
         <form class="credential-form" onsubmit="return false;">
@@ -75,7 +82,8 @@
               <span class="field-code">FIELD // 04</span>
             </div>
             <div class="field-box">
-              <input type="email" id="emailInput" placeholder="e.g. cynthia.v@mca.christuniversity.in" autocomplete="off" />
+              <input type="email" id="emailInput" placeholder="e.g. cynthia.v@mca.christuniversity.in"
+                autocomplete="off" />
               <span class="input-focus-line"></span>
             </div>
           </div>
@@ -130,7 +138,7 @@
                 <div class="ins-sub">BANGALORE, INDIA • DEPARTMENT OF COMPUTER SCIENCE</div>
               </div>
             </div>
-            
+
             <div class="pass-nfc">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
@@ -214,4 +222,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
